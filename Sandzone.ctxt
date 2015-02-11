@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Sandzone()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Sandzone.\r\n\ \r\n
+comment1.params=
+comment1.target=void\ switchScreen()
+comment2.params=num
+comment2.target=void\ subtractHealth(int)
+comment3.params=num
+comment3.target=void\ addHealth(int)
+comment4.params=
+comment4.target=void\ prepare()
+comment4.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\ That\ is\:\ create\ the\ initial\r\n\ objects\ and\ add\ them\ to\ the\ world.\r\n
+numComments=5
