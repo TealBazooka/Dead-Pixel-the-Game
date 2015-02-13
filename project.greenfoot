@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Feb 10 17:38:33 PST 2015
+#Thu Feb 12 17:23:50 PST 2015
 class.SkeletonKing.superclass=greenfoot.Actor
 target2.width=80
 target8.name=TitleScreen
@@ -75,8 +75,8 @@ target2.showInterface=false
 dependency1.from=Sandzone
 target5.editor.y=-2
 target5.editor.x=-11
-mainWindow.y=-7
-mainWindow.x=-8
+mainWindow.y=-2
+mainWindow.x=-2
 target5.showInterface=false
 dependency16.to=Character
 target8.showInterface=false

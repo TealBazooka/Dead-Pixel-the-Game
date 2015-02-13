@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class IronSword extends Actor
 {
-    int pause = 2;
+    int pause = 5;
     int direction;
     /**
      * Act - do whatever the IronSword wants to do. This method is called whenever

@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Character extends Actor
 {
-    int direction;
-    int collisionCountdown = 0;
+    public int direction;
+    public int collisionCountdown = 0;
+    public int swordTimer;
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,8 +28,14 @@ public class Character extends Actor
         {
             handleCollisions();
         }
-        stab();
-        //handleCollisions();
+        if( swordTimer > 0 )
+        {
+            swordTimer--;
+        }
+        else
+        {
+            stab();
+        }
     }    
 
     public void movement()
@@ -83,6 +90,7 @@ public class Character extends Actor
                 ironsword.setDirection(1);
                 ironsword.imageSetter();
                 getWorld().addObject(ironsword, getX() + 1, getY() - 20);
+                swordTimer = 30;
             }
             else if(direction == 2)
             {
@@ -90,6 +98,7 @@ public class Character extends Actor
                 ironsword.setDirection(2);
                 ironsword.imageSetter();
                 getWorld().addObject(ironsword, getX() + 15, getY() + 9);
+                swordTimer = 30;
             }
             else if(direction == 3)
             {
@@ -97,6 +106,7 @@ public class Character extends Actor
                 ironsword.setDirection(3);
                 ironsword.imageSetter();
                 getWorld().addObject(ironsword, getX(), getY() + 20);
+                swordTimer = 30;
             }
             else if(direction == 4)
             {
@@ -104,6 +114,7 @@ public class Character extends Actor
                 ironsword.setDirection(4);
                 ironsword.imageSetter();
                 getWorld().addObject(ironsword, getX() -15, getY() + 9);
+                swordTimer = 30;
             }
         }
     }
