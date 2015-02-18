@@ -33,7 +33,8 @@ public class SkeletonKing extends Actor
           heroY = hero.get(0).getY();
           turnTowards(hero.get(0).getX(), hero.get(0).getY());  
           //getImage().rotate(0);
-          move(1);
+          super.move(1);
+          setRotation (0);
         }
     }
 
