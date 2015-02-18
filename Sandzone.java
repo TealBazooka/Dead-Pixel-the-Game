@@ -53,8 +53,7 @@ public class Sandzone extends World
         character.setLocation(512, 217);
         skeleton.setLocation(100, 81);
 
-        healthbar = new HealthBar();
-        addObject(healthbar, 120, 40);
+        
         skeleton.setLocation(120, 199);
         Skeleton skeleton2 = new Skeleton();
         addObject(skeleton2, 126, 277);
@@ -81,6 +80,9 @@ public class Sandzone extends World
         skeleton9.setLocation(88, 270);
         skeleton8.setLocation(86, 210);
         skeleton7.setLocation(88, 150);
+        
+        healthbar = new HealthBar();
+        addObject(healthbar, 120, 40);
     }
 
 }

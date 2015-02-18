@@ -89,7 +89,7 @@ public class Character extends Actor
                 IronSword ironsword = new IronSword();
                 ironsword.setDirection(1);
                 ironsword.imageSetter();
-                getWorld().addObject(ironsword, getX() + 1, getY() - 20);
+                getWorld().addObject(ironsword, getX() + 1, getY() - 22);
                 swordTimer = 30;
             }
             else if(direction == 2)
