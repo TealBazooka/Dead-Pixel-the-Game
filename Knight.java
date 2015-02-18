@@ -9,8 +9,8 @@ import greenfoot.*;
 public class Knight extends Actor
 {
     public int movementCountDown = 5;
-    
-    
+    public int hitPoints = 3;
+    public int direction;
     
     public void act() 
     {
@@ -24,6 +24,8 @@ public class Knight extends Actor
             movementCountDown = 5;
         }
         move(2);
+        setDirection();
+        death();
     }    
     public void movement()
     {
@@ -46,6 +48,61 @@ public class Knight extends Actor
         {
             setRotation(180);
             setImage("leftarrow.png");
+        }
+    }
+    public void setDirection()
+    {
+        if(Greenfoot.isKeyDown("up"))
+        {
+            direction = 1;
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            direction = 3;
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            direction = 4;
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            direction = 2;
+        }
+    }
+    public void death()
+    {
+        // Death: if the iron sword touches this actor it is removed.
+        Actor ironsword;
+        ironsword = getOneObjectAtOffset(0, 0, IronSword.class);
+        if (isTouching(IronSword.class) == true)
+        {
+            if( direction == 1)
+            {
+                //up
+                setLocation(getX(), getY() - 75);
+            }
+            if( direction == 2)
+            {
+                //right
+                setLocation(getX() + 75, getY());
+            }
+            if(direction == 3)
+            {
+                //down
+                setLocation(getX(), getY() + 75);
+            }
+            if(direction == 4)
+            {
+                // left
+                setLocation(getX() - 75, getY());
+            }
+            hitPoints = hitPoints -1;
+        }
+        if (hitPoints <= 0)
+        {
+            World world;
+            world = getWorld();
+            world.removeObject(this);
         }
     }
 }

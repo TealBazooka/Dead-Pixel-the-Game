@@ -20,11 +20,13 @@ public class Room2 extends World
 
         prepare();
     }
-
-    /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
-     */
+    public void act()
+    {
+        if(Greenfoot.getRandomNumber(1000) < 20) {
+            Spider spider = new Spider();
+            addObject(spider, Greenfoot.getRandomNumber(getWidth()-20) + 10, -30);
+        }
+    }
     private void prepare()
     {
         SkeletonKing skeletonking = new SkeletonKing();

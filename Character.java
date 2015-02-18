@@ -126,6 +126,26 @@ public class Character extends Actor
         {
             Sandzone sandzone = (Sandzone) getWorld();
             sandzone.subtractHealth(1);
+            if( direction == 3)
+            {
+                //up
+                setLocation(getX(), getY() - 50);
+            }
+            if( direction == 4)
+            {
+                //right
+                setLocation(getX() + 50, getY());
+            }
+            if(direction == 1)
+            {
+                //down
+                setLocation(getX(), getY() + 50);
+            }
+            if(direction == 2)
+            {
+                // left
+                setLocation(getX() - 50, getY());
+            }
             collisionCountdown = 50;
         }
     }

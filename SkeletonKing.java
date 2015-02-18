@@ -8,19 +8,46 @@ import java.util.*;
  */
 public class SkeletonKing extends Actor
 {
+    public int hitPoints = 5;
+    public int invinsibility;
+    public int direction = 3;
     
-    /**
-     * Act - do whatever the SkeletonKing wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act() 
     {
         // Add your action code here.
         fightPlayer();
-        death();
+        if( invinsibility > 0 )
+        {
+            invinsibility--;
+            //add red version of hit point images with if hitpoint statements
+        }
+        else
+        {
+            death();
+        }
+        setDirection();
         //kill will give an error when death occurs
     }    
-
+    public void setDirection()
+    {
+        if(Greenfoot.isKeyDown("up"))
+        {
+            direction = 1;
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            direction = 3;
+        }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            direction = 4;
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            direction = 2;
+        }
+    }
     public void fightPlayer()
     {
       //Follows player around to fight -- Heather
@@ -45,9 +72,36 @@ public class SkeletonKing extends Actor
         ironsword = getOneObjectAtOffset(0, 0, IronSword.class);
         if (isTouching(IronSword.class) == true)
         {
+            if( direction == 1)
+            {
+                //up
+                setLocation(getX(), getY() - 200);
+            }
+            if( direction == 2)
+            {
+                //right
+                setLocation(getX() + 200, getY());
+            }
+            if(direction == 3)
+            {
+                //down
+                setLocation(getX(), getY() + 200);
+            }
+            if(direction == 4)
+            {
+                // left
+                setLocation(getX() - 200, getY());
+            }
+            hitPoints = hitPoints -1;
+            invinsibility = 100;
+            
+        }
+        //add hit point images
+        if (hitPoints <= 0)
+        {
             World world;
             world = getWorld();
             world.removeObject(this);
         }
-    } 
+    }
 }
